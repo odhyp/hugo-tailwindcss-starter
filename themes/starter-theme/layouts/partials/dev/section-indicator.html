@@ -1,0 +1,29 @@
+{{ if hugo.IsServer }}
+<button id="toggleBorders" class="w-8 h-8 mb-2 block rounded-full text-slate-600 text-sm bg-slate-200 uppercase pointer-events-auto">
+    <span>B</span>
+</button>
+
+<script>
+    // Get the button element
+    const toggleBordersButton = document.getElementById("toggleBorders");
+
+    // Set a flag to track border state
+    let bordersVisible = false;
+
+    // Function to toggle TailwindCSS border classes on <section> elements
+    function toggleBorders() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            if (bordersVisible) {
+                section.classList.remove('bg-red-200');
+            } else {
+                section.classList.add('bg-red-200');
+            }
+        });
+        bordersVisible = !bordersVisible;
+    }
+
+    // Add event listener to the button
+    toggleBordersButton.addEventListener('click', toggleBorders);
+</script>
+{{ end }}
