@@ -2,12 +2,15 @@
 <html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
 
+  <!-- DEV TOOLS START -->
+  {{- partial "dev/dev-tools.html" . -}}
+  <!-- DEV TOOLS END -->
+
   <body class="flex min-h-dvh flex-col sm:min-h-screen">
-    {{- partial "dev/dev-tools.html" . -}} {{- partial "header/site-header.html"
-    . -}}
+    {{- partial "header.html" . -}}
     <main class="mx-auto w-screen max-w-4xl flex-1 grow px-6 py-16">
       {{- block "main" . }}{{- end }}
     </main>
-    {{- partial "footer/site-footer.html" . -}}
+    {{- partial "footer.html" . -}}
   </body>
 </html>
