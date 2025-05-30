@@ -24,11 +24,11 @@
     "watch": "hugo server --disableFastRender --navigateToChanged"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.0.1",
-    "postcss": "^8.5.1",
-    "postcss-cli": "^11.0.0",
-    "prettier": "^3.4.2",
+    "@tailwindcss/postcss": "^4.1.8",
+    "postcss": "^8.5.4",
+    "postcss-cli": "^11.0.1",
+    "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.1"
+    "tailwindcss": "^4.1.8"
   }
 }
