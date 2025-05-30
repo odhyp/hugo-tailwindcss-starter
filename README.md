@@ -54,7 +54,7 @@ This starter project integrates **Hugo** with **TailwindCSS v4.0** and is ready 
 
 Ensure you have the following installed:
 
-- [Hugo](https://gohugo.io/installation/) (Extended Edition - at least v0.136.x)
+- [Hugo](https://gohugo.io/installation/) (Extended Edition - at least v0.146.x)
 - [Node.js](https://nodejs.org/en/download) (at least v18.x)
 - [Vercel Account](https://vercel.com/signup) (optional for deployment)
 
