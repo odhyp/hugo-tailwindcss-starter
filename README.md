@@ -16,7 +16,7 @@
 <h3 align="center">Hugo TailwindCSS Starter</h3>
 
   <p align="center">
-    A starter project for Hugo and TailwindCSS v4.0
+    A starter project for Hugo and TailwindCSS v4.1
     <br />
     Ready to deploy in Vercel 🚀
     <br />
@@ -34,7 +34,7 @@
 
 ## Welcome
 
-This starter project integrates **Hugo** with **TailwindCSS v4.0** and is ready for deployment on **Vercel**.
+This starter project integrates **Hugo** with **TailwindCSS v4.1** and is ready for deployment on **Vercel**.
 
 ### Built With
 
@@ -44,7 +44,7 @@ This starter project integrates **Hugo** with **TailwindCSS v4.0** and is ready 
 
 ### Features
 
-- Integration of Hugo and TailwindCSS v4.0
+- Integration of Hugo and TailwindCSS v4.1
 - Easy deployment with Vercel
 - Starter templates for rapid development
 
