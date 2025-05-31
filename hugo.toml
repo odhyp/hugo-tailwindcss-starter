@@ -2,6 +2,8 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Hugo TailwindCSS Starter'
 
+ignoreLogs = ["warning-goldmark-raw-html"]
+
 [build]
   [build.buildStats]
     enable = true
