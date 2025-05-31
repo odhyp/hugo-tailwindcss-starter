@@ -14,6 +14,9 @@ ignoreLogs = ["warning-goldmark-raw-html"]
     source = '(postcss|tailwind)\.config\.js'
     target = 'css'
 [module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.146.0'
   [[module.mounts]]
     source = 'assets'
     target = 'assets'
