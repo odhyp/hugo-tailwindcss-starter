@@ -18,7 +18,7 @@
   <p align="center">
     A starter project for Hugo and TailwindCSS v4.1
     <br />
-    Ready to deploy in Vercel or Netlify 🚀
+    Ready to deploy in Vercel, GitHub Pages or Netlify 🚀
     <br />
     <a href="https://hugo-tailwindcss-starter.vercel.app/"><strong>View Live »</strong></a>
     <br />
@@ -34,7 +34,7 @@
 
 ## Welcome
 
-This starter project integrates **Hugo** with **TailwindCSS v4.1** and is ready for deployment on **Vercel** or **Netlify**.
+This starter project integrates **Hugo** with **TailwindCSS v4.1** and is ready for deployment on **Vercel**, **GitHub Pages** or **Netlify**.
 
 ### Built With
 
@@ -45,7 +45,7 @@ This starter project integrates **Hugo** with **TailwindCSS v4.1** and is ready 
 ### Features
 
 - Integration of Hugo and TailwindCSS v4.1
-- Easy deployment with Vercel of Netlify
+- Easy deployment with GitHub Pages, Netlify or Vercel
 - Starter templates for rapid development
 
 <!-- GETTING STARTED -->
@@ -59,6 +59,7 @@ Ensure you have the following installed:
 - For deployment (optional):
     - [Vercel Account](https://vercel.com/signup) or
     - [Netlify Account](https://app.netlify.com/signup)
+    - [GitHub Account](https://github.com/signup)
 
 To get a local copy up and running, follow these steps:
 
@@ -96,10 +97,25 @@ To get a local copy up and running, follow these steps:
 
 ## Roadmap
 
-- [ ] Add deployment guides for other platforms like GitHub or Cloudflare Pages
+- [ ] Add deployment guides for other platforms like GitLab or Cloudflare Pages
 - [ ] Include basic page layout components such as header and footer  
 
 See the [open issues](https://github.com/odhyp/hugo-tailwindcss-starter/issues) for a full list of proposed features (and known issues).
+
+## Deployment on GitHub Pages
+
+1. Create a local branch `gh-pages` and push this branch to your remote repo:
+
+```
+$ git checkout -b gh-pages
+$ git push --set-upstream origin gh-pages
+```
+
+1. If needed, [adapt](https://gohugo.io/host-and-deploy/host-on-github-pages/) the [deployment workflow file](.github/workflows/deployment-github-pages.yml).
+
+1. If you forked this repo in GitHub, [allow GitHub actions](https://github.com/deining/hugo-tailwindcss-starter/settings/actions) for your forked repo.
+
+1. Inspect your deployment: https://your-github-username.github.io/hugo-tailwindcss-starter/
 
 <!-- CONTRIBUTING -->
 
