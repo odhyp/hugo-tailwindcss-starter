@@ -94,7 +94,8 @@ To get a local copy up and running, follow these steps:
 
 ## Roadmap
 
-- No planned updates at the moment. Feel free to suggest improvements!
+- [ ] Add deployment guides for other platforms like Netlify and Cloudflare Pages  
+- [ ] Include basic page layout components such as header and footer  
 
 See the [open issues](https://github.com/odhyp/hugo-tailwindcss-starter/issues) for a full list of proposed features (and known issues).
 
