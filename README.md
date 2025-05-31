@@ -18,7 +18,7 @@
   <p align="center">
     A starter project for Hugo and TailwindCSS v4.1
     <br />
-    Ready to deploy in Vercel 🚀
+    Ready to deploy in Vercel or Netlify 🚀
     <br />
     <a href="https://hugo-tailwindcss-starter.vercel.app/"><strong>View Live »</strong></a>
     <br />
@@ -34,7 +34,7 @@
 
 ## Welcome
 
-This starter project integrates **Hugo** with **TailwindCSS v4.1** and is ready for deployment on **Vercel**.
+This starter project integrates **Hugo** with **TailwindCSS v4.1** and is ready for deployment on **Vercel** or **Netlify**.
 
 ### Built With
 
@@ -45,7 +45,7 @@ This starter project integrates **Hugo** with **TailwindCSS v4.1** and is ready 
 ### Features
 
 - Integration of Hugo and TailwindCSS v4.1
-- Easy deployment with Vercel
+- Easy deployment with Vercel of Netlify
 - Starter templates for rapid development
 
 <!-- GETTING STARTED -->
@@ -56,7 +56,9 @@ Ensure you have the following installed:
 
 - [Hugo](https://gohugo.io/installation/) (Extended Edition - at least v0.146.x)
 - [Node.js](https://nodejs.org/en/download) (at least v18.x)
-- [Vercel Account](https://vercel.com/signup) (optional for deployment)
+- For deployment (optional):
+    - [Vercel Account](https://vercel.com/signup) or
+    - [Netlify Account](https://app.netlify.com/signup)
 
 To get a local copy up and running, follow these steps:
 
@@ -94,7 +96,7 @@ To get a local copy up and running, follow these steps:
 
 ## Roadmap
 
-- [ ] Add deployment guides for other platforms like Netlify and Cloudflare Pages  
+- [ ] Add deployment guides for other platforms like GitHub or Cloudflare Pages
 - [ ] Include basic page layout components such as header and footer  
 
 See the [open issues](https://github.com/odhyp/hugo-tailwindcss-starter/issues) for a full list of proposed features (and known issues).
