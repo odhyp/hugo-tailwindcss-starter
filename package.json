@@ -1,13 +1,14 @@
 {
   "name": "hugo-tailwindcss-starter",
-  "description": "Starter project for Hugo and TailwindCSS v4.1, ready to deploy in Vercel!",
-  "version": "2.0.0",
+  "description": "Starter project for Hugo and TailwindCSS v4.1, ready to deploy in Netlify or Vercel!",
+  "version": "1.2.1-dev",
   "license": "MIT",
   "author": "Odhy Pradhana (odhyp.com)",
   "keywords": [
     "hugo",
     "tailwindcss",
     "tailwindcss-v4",
+    "netlify",
     "vercel"
   ],
   "repository": {
