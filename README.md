@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/odhyp/hugo-tailwindcss-starter">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Logo_of_Hugo_the_static_website_generator.svg" alt="Logo" width="auto" height="75">
+    <img src="static/hugo_tailwind.png" alt="Logo" width="auto" height="120">
   </a>
 
 <h3 align="center">Hugo TailwindCSS Starter</h3>
