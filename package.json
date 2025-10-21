@@ -25,7 +25,7 @@
     "watch": "hugo server --disableFastRender --navigateToChanged"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.14",
+    "@tailwindcss/cli": "^4.1.15",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4.1.14"
