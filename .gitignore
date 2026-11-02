@@ -1,0 +1,8 @@
+# Hugo output and generated resources
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/.cache/
+
+# Node
+/node_modules/
