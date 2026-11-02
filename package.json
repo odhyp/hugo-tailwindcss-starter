@@ -1,0 +1,26 @@
+{
+  "name": "hugo-tailwindcss-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.16.1",
+  "type": "module",
+  "devDependencies": {
+    "@htnabe/prettier-plugin-go-template": "^0.0.6",
+    "@htnabe/prettier-plugin-hugo-post": "^0.0.2",
+    "prettier": "3.9.10"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "prettier-plugin-toml",
+    "@htnabe/prettier-plugin-go-template",
+    "@htnabe/prettier-plugin-hugo-post"
+  ],
+  "overrides": [
+    {
+      "files": ["layouts/**/*.html"],
+      "options": {
+        "parser": "go-template"
+      }
+    },
+    {
+      "files": ["content/**/*.md", "test/fixtures/**/*.md"],
+      "options": {
+        "parser": "hugo-post"
+      }
+    }
+  ]
+}
