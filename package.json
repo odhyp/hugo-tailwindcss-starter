@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "new": "hugo new content",
+    "format": "prettier --write assets content layouts test hugo.toml package.json .prettierrc",
+    "format:check": "prettier --check assets content layouts test hugo.toml package.json .prettierrc"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,10 @@
   "devDependencies": {
     "@htnabe/prettier-plugin-go-template": "^0.0.6",
     "@htnabe/prettier-plugin-hugo-post": "^0.0.2",
-    "prettier": "3.9.10"
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "prettier": "3.9.10",
+    "prettier-plugin-toml": "^4.1.0",
+    "tailwindcss": "^4.3.3"
   }
 }
