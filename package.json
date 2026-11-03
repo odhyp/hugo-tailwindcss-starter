@@ -1,33 +1,43 @@
 {
   "name": "hugo-tailwindcss-starter",
-  "description": "Starter project for Hugo and TailwindCSS v4.3, ready to deploy in Netlify or Vercel!",
-  "version": "1.2.1-dev",
-  "license": "MIT",
-  "author": "Odhy Pradhana (odhyp.com)",
+  "version": "1.3.0",
+  "description": "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy in Cloudflare Workers.",
+  "scripts": {
+    "dev": "hugo server --buildDrafts --buildFuture",
+    "build": "hugo --gc --minify",
+    "preview": "hugo server --minify --environment production",
+    "new": "hugo new content",
+    "deploy": "wrangler deploy",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "keywords": [
     "hugo",
     "tailwindcss",
-    "tailwindcss-v4",
-    "netlify",
-    "vercel"
+    "cloudflare",
+    "starter",
+    "template"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/odhyp/hugo-tailwindcss-starter.git"
+  "author": "Odhy Pradhana <hi@odhyp.com>",
+  "license": "MIT",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
   },
-  "bugs": {
-    "url": "https://github.com/odhyp/hugo-tailwindcss-starter/issues"
-  },
-  "homepage": "https://github.com/odhyp/hugo-tailwindcss-starter#readme",
-  "scripts": {
-    "dev": "hugo server",
-    "build": "hugo --gc --minify",
-    "watch": "hugo server --disableFastRender --navigateToChanged"
-  },
-  "dependencies": {
-    "@tailwindcss/cli": "^4.3.0",
-    "prettier": "^3.8.1",
-    "prettier-plugin-tailwindcss": "^0.8.0",
-    "tailwindcss": "^4.3.0"
+  "packageManager": "pnpm@12.16.1",
+  "type": "module",
+  "devDependencies": {
+    "@htnabe/prettier-plugin-go-template": "^0.0.6",
+    "@htnabe/prettier-plugin-hugo-post": "^0.0.2",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "lefthook": "^2.2.2",
+    "prettier": "3.9.10",
+    "prettier-plugin-toml": "^4.1.0",
+    "tailwindcss": "^4.3.3",
+    "wrangler": "^4.156.1"
   }
 }

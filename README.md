@@ -1,136 +1,77 @@
-<!-- PROJECT SHIELDS -->
+# Hugo Tailwind CSS Starter
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Forks][forks-shield]][forks-url]
-[![Issues][issues-shield]][issues-url]
+Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy on Cloudflare Workers.
 
-<!-- PROJECT LOGO -->
-<br />
-<br />
-<div align="center">
-  <a href="https://github.com/odhyp/hugo-tailwindcss-starter">
-    <img src="static/hugo_tailwind.png" alt="Logo" width="auto" height="120">
-  </a>
+## Scope
 
-<h3 align="center">Hugo TailwindCSS Starter</h3>
+This starter is minimal but opinionated: Hugo, Tailwind CSS v4, Prettier with a pre-commit hook, and a Cloudflare Workers deploy. It has no theme, no components, and no JavaScript build step. The aim is a clean base you build on, not a site you strip down.
 
-  <p align="center">
-    A starter project for Hugo and TailwindCSS v4.3
-    <br />
-    Ready to deploy in Vercel, GitHub Pages or Netlify 🚀
-    <br />
-    <a href="https://hugo-tailwindcss-starter.vercel.app/"><strong>View Live »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/odhyp/hugo-tailwindcss-starter/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    &middot;
-    <a href="https://github.com/odhyp/hugo-tailwindcss-starter/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
-    <br />
-</div>
+Deployment targets Cloudflare Workers only. Other hosts (Netlify, Vercel, GitHub Pages) will likely work with `pnpm build`, but they aren't documented or supported here.
 
-<!-- ABOUT THE PROJECT -->
+## Requirements
 
-## Welcome
+- [Hugo](https://gohugo.io/installation/) v0.168.0 or later
+- [Node.js](https://nodejs.org/) v20 or later
+- [pnpm](https://pnpm.io/installation)
 
-This starter project integrates **Hugo** with **TailwindCSS v4.3** and is ready for deployment on **Vercel**, **GitHub Pages** or **Netlify**.
+## Getting started
 
-### Built With
+1. Click **Use this template** on GitHub and clone your new repository.
+2. Install dependencies and start the dev server:
 
-- ![Hugo](https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white)
-- ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-- ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-
-### Features
-
-- Integration of Hugo and TailwindCSS v4.2
-- Easy deployment with GitHub Pages, Netlify or Vercel
-- Starter templates for rapid development
-
-<!-- GETTING STARTED -->
-
-## Installation
-
-Ensure you have the following installed:
-
-- [Hugo](https://gohugo.io/installation/) (Extended Edition - at least v0.146.x)
-- [Node.js](https://nodejs.org/en/download) (at least v22.x)
-- For deployment (optional):
-    - [Vercel Account](https://vercel.com/signup) or
-    - [Netlify Account](https://app.netlify.com/signup)
-    - [GitHub Account](https://github.com/signup)
-
-To get a local copy up and running, follow these steps:
-
-1. Clone the repository
-
-   ```bash
-   git clone https://github.com/odhyp/hugo-tailwindcss-starter.git
+   ```sh
+   pnpm install
+   pnpm dev
    ```
 
-2. Navigate to the project directory
+3. Open <http://localhost:1313>.
 
-   ```bash
-   cd hugo-tailwindcss-starter
-   ```
+Set `baseURL`, `title`, and `params.description` in `hugo.toml` to your own values. A page's `description` front matter overrides the site description.
 
-3. Install the Node.js dependencies
+## Scripts
 
-   ```bash
-   npm install
-   ```
+| Command             | Description                                    |
+| ------------------- | ---------------------------------------------- |
+| `pnpm dev`          | Dev server, including drafts and future posts  |
+| `pnpm build`        | Production build to `public/`                  |
+| `pnpm preview`      | Dev server with production settings            |
+| `pnpm new <path>`   | Create content, e.g. `pnpm new posts/hello.md` |
+| `pnpm run deploy`   | Build and deploy to Cloudflare Workers         |
+| `pnpm format`       | Format all files with Prettier                 |
+| `pnpm format:check` | Check formatting without writing               |
 
-4. Run the development server
+A [Lefthook](https://lefthook.dev/) pre-commit hook, installed by `pnpm install`, formats staged files with Prettier on every commit. Skip it once with `git commit --no-verify`.
 
-   ```bash
-   npm run dev
-   ```
+## Deploy to Cloudflare Workers
 
-5. When development is complete, build the optimized Hugo site
+The site deploys as a Worker with [static assets](https://developers.cloudflare.com/workers/static-assets/), configured in `wrangler.jsonc`. Set `name` there to your project name before the first deploy.
 
-   ```bash
-   npm run build
-   ```
+### From Git (Workers Builds)
 
-<!-- ROADMAP -->
+1. In the Cloudflare dashboard, go to **Workers & Pages** > **Create** > **Import a repository** and select your repository.
+2. Leave **Build command** blank and set **Deploy command** to `pnpm exec wrangler deploy` (not the default `npx`, which npm refuses to run because `devEngines` requires pnpm). Wrangler runs `pnpm build` itself, from `build.command` in `wrangler.jsonc`.
+3. Under **Advanced settings**, add build variables `HUGO_VERSION` = `0.168.0` (or newer) and `LEFTHOOK` = `0` (skips installing the Git hook during the build).
 
-## Roadmap
+`HUGO_VERSION` is required: the Hugo preinstalled in the build image is too old for this template. pnpm is picked up from `packageManager` in `package.json`.
 
-- [ ] Add deployment guides for other platforms like GitLab or Cloudflare Pages
-- [ ] Include basic page layout components such as header and footer  
+When upgrading Hugo, update `HUGO_VERSION` in the Cloudflare dashboard and `hugo-version` in `.github/workflows/ci.yml`.
 
-See the [open issues](https://github.com/odhyp/hugo-tailwindcss-starter/issues) for a full list of proposed features (and known issues).
+### From your machine
 
-## Deployment on GitHub Pages
-
-1. Create a local branch `gh-pages` and push this branch to your remote repo:
-
-```
-$ git switch -c gh-pages
-$ git push --set-upstream origin gh-pages
+```sh
+pnpm run deploy
 ```
 
-1. If needed, [adapt](https://gohugo.io/host-and-deploy/host-on-github-pages/) the [deployment workflow file](.github/workflows/deployment-github-pages.yml).
-
-1. If you forked this repo in GitHub, [allow GitHub actions](https://github.com/deining/hugo-tailwindcss-starter/settings/actions) for your forked repo.
-
-1. Inspect your deployment: https://your-github-username.github.io/hugo-tailwindcss-starter/
-
-<!-- CONTRIBUTING -->
+This builds the site and uploads `public/`. The first run asks you to log in to Cloudflare.
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Bug fixes and version bumps are welcome. Please open an issue before adding a feature, since most additions are out of [scope](#scope) on purpose.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Before opening a PR:
 
-1. Fork the Project
-2. Create your Feature Branch (`git switch -c feature/YourFeature`)
-3. Commit your Changes (`git commit -m 'Add some YourFeature'`)
-4. Push to the Branch (`git push origin feature/YourFeature`)
-5. Open a Pull Request
+1. Make sure `pnpm build` passes. Formatting is handled by the pre-commit hook. CI runs `pnpm format:check` and `pnpm build` on every PR.
+2. Use [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `chore:`), matching the existing history.
 
 ### Top contributors
 
@@ -138,27 +79,6 @@ Don't forget to give the project a star! Thanks again!
   <img src="https://contrib.rocks/image?repo=odhyp/hugo-tailwindcss-starter" alt="contrib.rocks image" />
 </a>
 
-<!-- LICENSE -->
-
 ## License
 
-Distributed under the MIT License. See [`LICENSE`](https://github.com/odhyp/hugo-tailwindcss-starter/blob/master/LICENSE) for more information.
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgements
-
-- [Othneil Drew](https://github.com/othneildrew) for the [README.md Template](https://github.com/othneildrew/Best-README-Template)
-- [Alexandre Sanlim](https://github.com/alexandresanlim) for the [README.md badges](https://github.com/alexandresanlim/Badges4-README.md-Profile)
-- [Cover image](https://upload.wikimedia.org/wikipedia/commons/a/af/Logo_of_Hugo_the_static_website_generator.svg)
-
-<!-- MARKDOWN LINKS & IMAGES -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/odhyp/hugo-tailwindcss-starter.svg?style=for-the-badge
-[contributors-url]: https://github.com/odhyp/hugo-tailwindcss-starter/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/odhyp/hugo-tailwindcss-starter.svg?style=for-the-badge
-[forks-url]: https://github.com/odhyp/hugo-tailwindcss-starter/network/members
-[stars-shield]: https://img.shields.io/github/stars/odhyp/hugo-tailwindcss-starter.svg?style=for-the-badge
-[stars-url]: https://github.com/odhyp/hugo-tailwindcss-starter/stargazers
-[issues-shield]: https://img.shields.io/github/issues/odhyp/hugo-tailwindcss-starter.svg?style=for-the-badge
-[issues-url]: https://github.com/odhyp/hugo-tailwindcss-starter/issues
+Distributed under the MIT License. See [LICENSE](https://github.com/odhyp/hugo-tailwindcss-starter/blob/main/LICENSE) for more information.

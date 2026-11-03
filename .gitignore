@@ -1,5 +1,12 @@
-/node_modules
-/public
+# Hugo output and generated resources
+/public/
 /resources/_gen/
+/.hugo_build.lock
+/.cache/
 /hugo_stats.json
-.hugo_build.lock
+
+# Node
+/node_modules/
+
+# Wrangler
+/.wrangler/

@@ -1,8 +1,0 @@
-[build.environment]
-HUGO_VERSION = "0.159.2"
-NODE_VERSION = "24.14.1"
-GO_VERSION = "1.26.1"
- 
-[build]
-publish = "public"
-command = "  hugo --gc --minify"

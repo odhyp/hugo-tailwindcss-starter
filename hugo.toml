@@ -1,30 +1,43 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'Hugo TailwindCSS Starter'
+baseURL = "https://example.org/"
+locale = "en-us"
+title = "Hugo TailwindCSS Starter"
 
-ignoreLogs = ["warning-goldmark-raw-html"]
+[params]
+description = "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy on Cloudflare Workers."
 
 [build]
-  [build.buildStats]
-    enable = true
-  [[build.cachebusters]]
-    source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
-  [[build.cachebusters]]
-    source = '(postcss|tailwind)\.config\.js'
-    target = 'css'
-[module]
-  [module.hugoVersion]
-    extended = true
-    min = '0.146.0'
-  [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
-  [[module.mounts]]
-    disableWatch = true
-    source = 'hugo_stats.json'
-    target = 'assets/notwatching/hugo_stats.json'
+[build.buildStats]
+enable = true
 
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
+[[build.cachebusters]]
+source = 'assets/notwatching/hugo_stats\.json'
+target = "css"
+
+[[build.cachebusters]]
+source = '(postcss|tailwind)\.config\.js'
+target = "css"
+
+[module]
+[module.hugoVersion]
+extended = false
+min = "0.168.0"
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+disableWatch = true
+source = "hugo_stats.json"
+target = "assets/notwatching/hugo_stats.json"
+
+[security]
+[security.exec]
+allow = [
+  "^(dart-)?sass$",
+  "^go$",
+  "^git$",
+  "^node$",
+  "^postcss$",
+  "^tailwindcss$"
+]
