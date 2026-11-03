@@ -49,7 +49,7 @@ The site deploys as a Worker with [static assets](https://developers.cloudflare.
 ### From Git (Workers Builds)
 
 1. In the Cloudflare dashboard, go to **Workers & Pages** > **Create** > **Import a repository** and select your repository.
-2. Leave **Build command** blank and set **Deploy command** to `pnpm exec wrangler deploy` (not the default `npx`, which npm refuses to run because `devEngines` requires pnpm). Wrangler runs `pnpm build` itself, from `build.command` in `wrangler.jsonc`.
+2. Leave **Build command** blank and set **Deploy command** to `pnpm exec wrangler deploy`. If builds for non-production branches are enabled, set **Non-production branch deploy command** to `pnpm exec wrangler versions upload`. Don't keep the `npx` defaults, which npm refuses to run because `devEngines` requires pnpm. Wrangler runs `pnpm build` itself, from `build.command` in `wrangler.jsonc`.
 3. Under **Advanced settings**, add build variables `HUGO_VERSION` = `0.168.0` (or newer) and `LEFTHOOK` = `0` (skips installing the Git hook during the build).
 
 `HUGO_VERSION` is required: the Hugo preinstalled in the build image is too old for this template. pnpm is picked up from `packageManager` in `package.json`.
