@@ -4,3 +4,5 @@ allowBuilds:
   lefthook: true
   workerd: true
 extendNodePath: false
+# Hugo can't resolve .pnpm store paths in Linux, so builds fail in CI and Cloudflare.
+nodeLinker: hoisted
