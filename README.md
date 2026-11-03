@@ -1,12 +1,12 @@
 # Hugo Tailwind CSS Starter
 
-Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy on Cloudflare Workers.
+Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy on Cloudflare Pages.
 
 ## Scope
 
-This starter is minimal but opinionated: Hugo, Tailwind CSS v4, Prettier with a pre-commit hook, and a Cloudflare Workers deploy. It has no theme, no components, and no JavaScript build step. The aim is a clean base you build on, not a site you strip down.
+This starter is minimal but opinionated: Hugo, Tailwind CSS v4, Prettier with a pre-commit hook, and deploy to Cloudflare Pages. It has no theme, no components, and no JavaScript build step. The aim is a clean base you build on, not a site you strip down.
 
-Deployment targets Cloudflare Workers only. Other hosts (Netlify, Vercel, GitHub Pages) will likely work with `pnpm build`, but they aren't documented or supported here.
+Deployment targets Cloudflare Pages only. Other hosts (Netlify, Vercel, GitHub Pages) will likely work with `pnpm build`, but they aren't documented or supported here.
 
 ## Requirements
 
@@ -36,33 +36,27 @@ Set `baseURL`, `title`, and `params.description` in `hugo.toml` to your own valu
 | `pnpm build`        | Production build to `public/`                  |
 | `pnpm preview`      | Dev server with production settings            |
 | `pnpm new <path>`   | Create content, e.g. `pnpm new posts/hello.md` |
-| `pnpm run deploy`   | Build and deploy to Cloudflare Workers         |
 | `pnpm format`       | Format all files with Prettier                 |
 | `pnpm format:check` | Check formatting without writing               |
 
 A [Lefthook](https://lefthook.dev/) pre-commit hook, installed by `pnpm install`, formats staged files with Prettier on every commit. Skip it once with `git commit --no-verify`.
 
-## Deploy to Cloudflare Workers
+## Deploy to Cloudflare Pages
 
-The site deploys as a Worker with [static assets](https://developers.cloudflare.com/workers/static-assets/), configured in `wrangler.jsonc`. Set `name` there to your project name before the first deploy.
+The site deploys as a [Cloudflare Pages](https://developers.cloudflare.com/pages/) project connected to your Git repository.
 
-### From Git (Workers Builds)
+1. In the Cloudflare dashboard, go to **Workers & Pages** > **Create** > **Pages** > **Import an existing Git repository** and select your repository.
+2. Set **Build command** to `pnpm build` and **Build output directory** to `public`.
+3. Add these environment variables:
 
-1. In the Cloudflare dashboard, go to **Workers & Pages** > **Create** > **Import a repository** and select your repository.
-2. Leave **Build command** blank and set **Deploy command** to `pnpm exec wrangler deploy`. If builds for non-production branches are enabled, set **Non-production branch deploy command** to `pnpm exec wrangler versions upload`. Don't keep the `npx` defaults, which npm refuses to run because `devEngines` requires pnpm. Wrangler runs `pnpm build` itself, from `build.command` in `wrangler.jsonc`.
-3. Under **Advanced settings**, add build variables `HUGO_VERSION` = `0.168.0` (or newer) and `LEFTHOOK` = `0` (skips installing the Git hook during the build).
-
-`HUGO_VERSION` is required: the Hugo preinstalled in the build image is too old for this template. pnpm is picked up from `packageManager` in `package.json`.
+   | Variable       | Value     | Why                                                |
+   | -------------- | --------- | -------------------------------------------------- |
+   | `HUGO_VERSION` | `0.168.0` | The build image's Hugo is too old for this starter |
+   | `PNPM_VERSION` | `12.16.1` | Pages ignores `packageManager` in `package.json`   |
+   | `NODE_VERSION` | `24`      | The build image defaults to an older Node.js       |
+   | `LEFTHOOK`     | `0`       | Skips installing the Git hook during the build     |
 
 When upgrading Hugo, update `HUGO_VERSION` in the Cloudflare dashboard and `hugo-version` in `.github/workflows/ci.yml`.
-
-### From your machine
-
-```sh
-pnpm run deploy
-```
-
-This builds the site and uploads `public/`. The first run asks you to log in to Cloudflare.
 
 ## Contributing
 
