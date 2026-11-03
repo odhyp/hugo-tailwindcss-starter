@@ -1,5 +1,6 @@
 allowBuilds:
   "@parcel/watcher": true
   esbuild: true
+  lefthook: true
   workerd: true
 extendNodePath: false
