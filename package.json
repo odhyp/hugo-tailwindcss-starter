@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "hugo server --buildDrafts --buildFuture",
     "build": "hugo --gc --minify",
-    "preview": "hugo server --minify",
+    "preview": "hugo server --minify --environment production",
     "new": "hugo new content",
     "deploy": "wrangler deploy",
     "format": "prettier --write .",
