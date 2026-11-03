@@ -1,16 +1,24 @@
 {
   "name": "hugo-tailwindcss-starter",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.3.0",
+  "description": "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy in Cloudflare.",
   "scripts": {
+    "dev": "hugo server --buildDrafts --buildFuture",
+    "build": "hugo --gc --minify",
+    "preview": "hugo server --minify",
     "new": "hugo new content",
-    "format": "prettier --write assets content layouts test hugo.toml package.json .prettierrc",
-    "format:check": "prettier --check assets content layouts test hugo.toml package.json .prettierrc"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "hugo",
+    "tailwindcss",
+    "cloudflare",
+    "starter",
+    "template"
+  ],
+  "author": "Odhy Pradhana <hi@odhyp.com>",
+  "license": "MIT",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
