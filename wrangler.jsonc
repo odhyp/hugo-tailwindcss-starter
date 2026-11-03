@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hugo-tailwindcss-starter",
+  "compatibility_date": "2026-11-03",
+  "build": {
+    "command": "pnpm build",
+  },
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+  },
+}

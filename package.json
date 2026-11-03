@@ -7,6 +7,7 @@
     "build": "hugo --gc --minify",
     "preview": "hugo server --minify",
     "new": "hugo new content",
+    "deploy": "wrangler deploy",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -35,6 +36,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "prettier": "3.9.10",
     "prettier-plugin-toml": "^4.1.0",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "wrangler": "^4.156.1"
   }
 }
