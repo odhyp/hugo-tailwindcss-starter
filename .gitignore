@@ -3,6 +3,7 @@
 /resources/_gen/
 /.hugo_build.lock
 /.cache/
+/hugo_stats.json
 
 # Node
 /node_modules/
