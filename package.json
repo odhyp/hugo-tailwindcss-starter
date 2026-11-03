@@ -1,7 +1,7 @@
 {
   "name": "hugo-tailwindcss-starter",
   "version": "1.3.0",
-  "description": "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy in Cloudflare.",
+  "description": "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy in Cloudflare Workers.",
   "scripts": {
     "dev": "hugo server --buildDrafts --buildFuture",
     "build": "hugo --gc --minify",
