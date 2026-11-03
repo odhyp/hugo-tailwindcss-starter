@@ -3,7 +3,7 @@ locale = "en-us"
 title = "Hugo TailwindCSS Starter"
 
 [params]
-description = "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy on Cloudflare Workers."
+description = "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy on Cloudflare Pages."
 
 [build]
 [build.buildStats]

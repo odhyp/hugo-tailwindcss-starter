@@ -1,13 +1,12 @@
 {
   "name": "hugo-tailwindcss-starter",
   "version": "1.3.0",
-  "description": "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy in Cloudflare Workers.",
+  "description": "Minimal Hugo starter with Tailwind CSS v4 and Prettier, ready to deploy on Cloudflare Pages.",
   "scripts": {
     "dev": "hugo server --buildDrafts --buildFuture",
     "build": "hugo --gc --minify",
     "preview": "hugo server --minify --environment production",
     "new": "hugo new content",
-    "deploy": "wrangler deploy",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -37,7 +36,6 @@
     "lefthook": "^2.2.2",
     "prettier": "3.9.10",
     "prettier-plugin-toml": "^4.1.0",
-    "tailwindcss": "^4.3.3",
-    "wrangler": "^4.156.1"
+    "tailwindcss": "^4.3.3"
   }
 }
