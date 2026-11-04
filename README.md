@@ -11,7 +11,7 @@ Deployment targets Cloudflare Pages only. Other hosts (Netlify, Vercel, GitHub P
 ## Requirements
 
 - [Hugo](https://gohugo.io/installation/) v0.168.0 or later
-- [Node.js](https://nodejs.org/) v20 or later
+- [Node.js](https://nodejs.org/) v26 or later
 - [pnpm](https://pnpm.io/installation)
 
 ## Getting started
@@ -53,7 +53,7 @@ The site deploys as a [Cloudflare Pages](https://developers.cloudflare.com/pages
    | -------------- | --------- | -------------------------------------------------- |
    | `HUGO_VERSION` | `0.168.0` | The build image's Hugo is too old for this starter |
    | `PNPM_VERSION` | `12.16.1` | Pages ignores `packageManager` in `package.json`   |
-   | `NODE_VERSION` | `24`      | The build image defaults to an older Node.js       |
+   | `NODE_VERSION` | `26`      | The build image defaults to an older Node.js       |
    | `LEFTHOOK`     | `0`       | Skips installing the Git hook during the build     |
 
 When upgrading Hugo, update `HUGO_VERSION` in the Cloudflare dashboard and `hugo-version` in `.github/workflows/ci.yml`.
