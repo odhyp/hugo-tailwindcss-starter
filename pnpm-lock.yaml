@@ -167,10 +167,10 @@ importers:
   .:
     devDependencies:
       '@htnabe/prettier-plugin-go-template':
-        specifier: ^0.0.6
+        specifier: 0.0.6
         version: 0.0.6(prettier@3.9.10)
       '@htnabe/prettier-plugin-hugo-post':
-        specifier: ^0.0.2
+        specifier: 0.0.2
         version: 0.0.2(prettier@3.9.10)
       '@tailwindcss/cli':
         specifier: ^4.3.3

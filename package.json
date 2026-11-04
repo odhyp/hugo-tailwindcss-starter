@@ -29,8 +29,8 @@
   "packageManager": "pnpm@12.16.1",
   "type": "module",
   "devDependencies": {
-    "@htnabe/prettier-plugin-go-template": "^0.0.6",
-    "@htnabe/prettier-plugin-hugo-post": "^0.0.2",
+    "@htnabe/prettier-plugin-go-template": "0.0.6",
+    "@htnabe/prettier-plugin-hugo-post": "0.0.2",
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
     "lefthook": "^2.2.2",
