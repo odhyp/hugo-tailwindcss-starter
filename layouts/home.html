@@ -1,12 +1,8 @@
 {{ define "main" }}
-  <section
-    class="mx-auto w-full max-w-2xl bg-neutral-950 border text-neutral-100 min-h-svh"
-  >
-    <h1>{{ site.Title }}</h1>
-    <ul>
-      {{ range site.RegularPages }}
-        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{ end }}
-    </ul>
-  </section>
+  <h1>{{ site.Title }}</h1>
+  <ul>
+    {{ range site.RegularPages }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+    {{ end }}
+  </ul>
 {{ end }}
