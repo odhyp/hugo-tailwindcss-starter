@@ -1,6 +1,7 @@
 {
   "plugins": [
     "prettier-plugin-toml",
+    "prettier-plugin-tailwindcss",
     "@htnabe/prettier-plugin-go-template",
     "@htnabe/prettier-plugin-hugo-post"
   ],
